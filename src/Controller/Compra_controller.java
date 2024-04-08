@@ -93,8 +93,14 @@ public class Compra_controller  {
         objCompra.setObjCliente(ClienteSelect);
         objCompra.setObjProducto(productoSelect);
 
+            double total = productoSelect.getPrecio() * cantidad;
+            double iva = total * 19/100;
+            double totalCompra = total + iva;
+
+
+
         objCompra = (Compra) this.objCompra_Model.insert(objCompra);
-        JOptionPane.showMessageDialog(null,objCompra.toString());
+        JOptionPane.showMessageDialog(null,objCompra.toString()+"Total:"+total);
 
 
         }else{
